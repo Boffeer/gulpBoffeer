@@ -9,6 +9,9 @@ module.exports = function () {
             }))
             .pipe($.gp.csscomb())
             .pipe($.gp.csso())
+            .pipe($.gp.uncss({
+                html: ['index.html', './build/*.html', 'http://example.com']
+            }))
             .pipe($.gulp.dest('./build/static/css/'))
     });
 
